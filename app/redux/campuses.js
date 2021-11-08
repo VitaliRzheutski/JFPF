@@ -90,6 +90,12 @@ export default function campusesReducer(state = initialState, action) {
       return [...state, action.campus];
     case DELETE_CAMPUS:
       return state.filter((campus) => campus.id !== action.id);
+    case UPDATE_CAMPUS:
+      return {
+        ...state,
+        name: action.name,
+        address: action.address
+      }
     default:
       return state;
   }

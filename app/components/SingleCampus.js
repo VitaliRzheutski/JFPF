@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { fetchSingleCampus } from "../redux/singleCampus";
 import StudentForSingleCampus from "./StudentForSingleCampus";
 import UpdateCampus from "./UpdateCampus";
+import { Link } from "react-router-dom";
 
 class SingleStudent extends React.Component {
   componentDidMount() {
@@ -29,7 +30,16 @@ class SingleStudent extends React.Component {
           </div>
         </div>
               <StudentForSingleCampus studentsProp={students} />
-              <UpdateCampus />
+              {/* <UpdateCampus /> */}
+              <Link to={`/campuses/${campus.id}/updateCampus`} className="link">
+          <button
+            type="button"
+            className="updateCampus"
+          
+          >
+            Edit campus
+          </button>
+        </Link>
       </div>
     );
   }

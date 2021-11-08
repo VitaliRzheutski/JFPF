@@ -9,6 +9,7 @@ import HomePage from "./HomePage";
 import Navbar from "./NavBar";
 import { AddStudent } from "./AddStudent";
 import UpdateStudent from "./UpdateStudent";
+import UpdateCampus from "./UpdateCampus";
 const Routes = () => {
   return (
     <Router>
@@ -29,6 +30,10 @@ const Routes = () => {
         <Route
           path="/students/:studentId/updateStudent"
           component={UpdateStudent}
+        />
+        <Route
+          path="/campuses/:campusId/updateCampus"
+          component={UpdateCampus}
         />
       </div>
     </Router>

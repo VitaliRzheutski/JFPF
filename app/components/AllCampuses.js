@@ -28,7 +28,8 @@ export class AllCampuses extends React.Component {
         </main>
 
         <div className="mainCard">
-          {campuses.map((campus) => (
+          {Array.isArray(campuses)
+          ? campuses.map((campus) => (
             <div className="st" key={campus.id}>
               <Link to={`/campuses/${campus.id}`} key={campus.id}>
                 <div className="card">
@@ -48,7 +49,8 @@ export class AllCampuses extends React.Component {
                 DELETE
               </button>
             </div>
-          ))}
+          ))
+        :null}
         </div>
         <AddCampus
           campuses={this.props.campuses}
