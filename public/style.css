@@ -1,0 +1,146 @@
+/*
+ * Hi! I'm your stylesheet! I've got some sensible defaults here,
+ * but feel free to change me to your heart's content!
+ */
+
+* {
+  box-sizing: border-box;
+  font-family: arial, sans-serif;
+}
+
+body {
+  background: white;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  /* width: 100vw; */
+  /* border: 1px solid red; */
+  max-width: 1500px;
+  margin: auto;
+}
+
+nav {
+  align-items: center;
+  background-color: #333333;
+  color: #c0c0c0;
+  display: flex;
+  height: 80px;
+  padding: 10px;
+}
+
+main {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+
+#navbar{
+  display: flex;
+  justify-content: center;
+}
+#navbar p{
+ color: white;
+ padding-left: 20px;
+}
+.allStudents{
+  display: flex;
+  justify-content: space-between;
+  width: 1000px;
+  text-align: center;
+}
+.student {
+  margin-right: 20px;
+}
+/* .campus{
+  display: flex;
+  justify-content: space-between;
+  width: 1000px;
+  text-align: center;
+} */
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  /* width: 50%; */
+  width: 250px;
+  height: 360px;
+  margin-right: 20px;
+  
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.container {
+  padding: 30px 0px;
+}
+img {
+  width:  100px;
+  height: 100px;
+  object-fit: cover;
+  text-align: center;
+}
+.mainCard{
+  width: 200px;
+  padding-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.singleStudenntFromCampus p{
+  margin-right: 10px;
+}
+
+
+
+#container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 400px;
+  margin: auto;
+}
+
+#navbar {
+  flex-grow: 1;
+  max-height: 10%;
+  min-height: 40px;
+  color: gray;
+  padding: 1em 0 0 1em;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-grow: 2;
+  margin: 1em;
+  
+}
+
+form input {
+  margin: 1em 0;
+  font-size: 1em;
+}
+
+form button {
+  padding: 1em 2em;
+  background-color: #59A9C2;
+  color: white;
+  border: none;
+  font-size: 1em;
+  transition: all 1s ease;
+  outline: none;
+}
+
+form button:hover {
+  background-color: #65878F;
+}
+
+.button{
+  margin-top: 20px;
+}
