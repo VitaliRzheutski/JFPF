@@ -10,6 +10,7 @@ import Navbar from "./NavBar";
 import { AddStudent } from "./AddStudent";
 import UpdateStudent from "./UpdateStudent";
 import UpdateCampus from "./UpdateCampus";
+import { AddCampus } from "./AddCampus";
 const Routes = () => {
   return (
     <Router>
@@ -18,12 +19,13 @@ const Routes = () => {
           {" "}
           <Navbar />
         </nav>
-        {/* <main>
-          <h1>Welcome to the Margaret Hamilton Academy of JavaScript!</h1>
-        </main> */}
+        
         <Route exact path="/" component={HomePage} />
         <Route exact path="/campuses" component={AllCampuses} />
-        <Route path="/campuses/:campusId" component={SingleCampus} />
+
+        <Route  path="/campuses/:campusId" component={SingleCampus} />
+        <Route  path ="/createCampus" component={AddCampus} />
+
         <Route exact path="/students" component={AllStudents} />
         <Route path="/students/:studentId" component={SingleStudent} />
         <Route path="/createStudent" component={AddStudent} />
@@ -31,10 +33,12 @@ const Routes = () => {
           path="/students/:studentId/updateStudent"
           component={UpdateStudent}
         />
+        
         <Route
           path="/campuses/:campusId/updateCampus"
           component={UpdateCampus}
         />
+        
       </div>
     </Router>
   );

@@ -14,49 +14,55 @@ import { AddCampus } from "./AddCampus";
 export class AllCampuses extends React.Component {
   componentDidMount() {
     this.props.loadCampuses();
-    this.props.addCampus();
+    // this.props.addCampus();
   }
 
   render() {
     const campuses = this.props.campuses;
-    console.log("campuses!:", campuses);
-    console.log("!!!!:", this.props);
+    // console.log("campuses!:", campuses);
+    // console.log("!!!!:", this.props);
     return (
       <div>
         <main>
           <h1>Welcome to view all Campuses:</h1>
         </main>
-
-        <div className="mainCard">
-          {Array.isArray(campuses)
-          ? campuses.map((campus) => (
-            <div className="st" key={campus.id}>
-              <Link to={`/campuses/${campus.id}`} key={campus.id}>
-                <div className="card">
-                  <img src={campus.imageUrl} />
-                  <div className="container">
-                    <p>{campus.name}</p>
-                    <p>{campus.description}</p>
-                    <p>{campus.address}</p>
-                  </div>
-                </div>
-              </Link>
-              <button
-                type="button"
-                className="button"
-                onClick={() => this.props.deleteCampus(campus.id)}
-              >
-                DELETE
-              </button>
-            </div>
-          ))
-        :null}
-        </div>
-        <AddCampus
+        <div >
+            <AddCampus
           campuses={this.props.campuses}
           addNewCampus={this.props.addCampus}
         />
+          </div>
+        <div className='container' >
+          
+          <div className="row my-custom-row justify-content-center align-items-center">
+            {Array.isArray(campuses)
+              ? campuses.map((campus) => (
+                <div className="col-sm-4" key={campus.id}><div className="p-3 border bg-light">
+
+                  <Link to={`/campuses/${campus.id}`} key={campus.id}>
+                    <img src={campus.imageUrl} />
+                    <p>{campus.name}</p>
+                    <p>{campus.description}</p>
+                    <p>{campus.address}</p>
+                  </Link>
+                  <button
+                    type="button"
+                    className="button btn btn-danger"
+                    onClick={() => this.props.deleteCampus(campus.id)}
+                  >
+                    DELETE
+                  </button>
+                </div></div>
+              ))
+              : null}
+          </div>
+
+        </div>
+
+        
+
       </div>
+
     );
   }
 }

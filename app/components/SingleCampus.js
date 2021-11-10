@@ -2,7 +2,6 @@ import React from "react";
 import { connect } from "react-redux";
 import { fetchSingleCampus } from "../redux/singleCampus";
 import StudentForSingleCampus from "./StudentForSingleCampus";
-import UpdateCampus from "./UpdateCampus";
 import { Link } from "react-router-dom";
 
 class SingleStudent extends React.Component {
@@ -34,7 +33,7 @@ class SingleStudent extends React.Component {
               <Link to={`/campuses/${campus.id}/updateCampus`} className="link">
           <button
             type="button"
-            className="updateCampus"
+            className="updateStudent btn btn-success"
           
           >
             Edit campus

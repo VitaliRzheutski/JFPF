@@ -47,7 +47,7 @@ class UpdateCampus extends React.Component {
             onChange={this.handleChange}
           />
 
-          <button type="submit">EDIT!</button>
+          <button type="submit" className="btn btn-success">Update Campus</button>
         </form>
       </div>
     );

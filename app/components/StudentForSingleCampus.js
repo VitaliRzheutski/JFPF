@@ -7,15 +7,15 @@ export class StudentForSingleCampus extends React.Component {
     const studentsIntihisCampus = this.props.studentsProp;
     // console.log("studentsIntihisCampus:", studentsIntihisCampus);
     return (
-      <div>
-        <div>Student form this Campus:</div>
+      <div className="univerLink">
+        <div>Student from this Campus:</div>
         {studentsIntihisCampus &&
           studentsIntihisCampus.map((singleStudent) => (
             <Link to={`/students/${singleStudent.id}`} key={singleStudent.id}>
               <div className="singleStudenntFromCampus">
-                <ul>
+              
                     <li>{singleStudent.firstName} {singleStudent.lastName}</li>
-                </ul>
+                
                   
               </div>
             </Link>

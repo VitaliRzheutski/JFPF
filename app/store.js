@@ -10,11 +10,11 @@ let middleware = [
   // https://github.com/reduxjs/redux-thunk#injecting-a-custom-argument
   thunkMiddleware.withExtraArgument({ axios }),
 ]
-if (process.browser) {
-  // We'd like the redux logger to only log messages when it's running in the
-  // browser, and not when we run the tests from within Mocha.
-  middleware = [...middleware, createLogger({ collapsed: true })]
-}
+// if (process.browser) {
+//   // We'd like the redux logger to only log messages when it's running in the
+//   // browser, and not when we run the tests from within Mocha.
+//   middleware = [...middleware, createLogger({ collapsed: true })]
+// }
 
 /** We wrap the entire redux store in a root reducer with a special
  * action, RESET_STORE. It calls our application's reducer with

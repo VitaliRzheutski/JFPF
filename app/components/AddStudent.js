@@ -30,7 +30,7 @@ export class AddStudent extends React.Component {
     // console.log("this.props from ADDSTUDENT:", this.props);
     return (
       <div id="container">
-        <div id="navbar">Add new Student:</div>
+        <div id="navbar">Create new Student:</div>
         <form onSubmit={this.handleSubmit}>
           <label htmlFor="firstName">FirtsName:</label>
           <input
@@ -55,7 +55,7 @@ export class AddStudent extends React.Component {
             onChange={this.handleChange}
           />
 
-          <button type="submit">Submit</button>
+          <button type="submit">Create</button>
         </form>
       </div>
     );

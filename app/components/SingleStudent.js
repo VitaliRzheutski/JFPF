@@ -22,13 +22,12 @@ class SingleStudent extends React.Component {
         <div className="card">
           <img src={student.imageUrl} />
           <div className="container">
-            <h4>{student.firstName}</h4>
-            <p>{student.lastName}</p>
+            <h4>{student.firstName} {student.lastName}</h4>
             <p>{student.email}</p>
-            <p>{student.gpa}</p>
+            <p>GPA:{student.gpa}</p>
           </div>
         </div>
-        <div>
+        <div className="univerLink">
           Studies at{" "}
           {student.campus ? (
             <Link to={`/campuses/${student.campusId}`} className="link">
@@ -41,14 +40,13 @@ class SingleStudent extends React.Component {
         <Link to={`/students/${student.id}/updateStudent`} className="link">
           <button
             type="button"
-            className="updateStudent"
+            className="updateStudent btn btn-success"
           
           >
             Edit student
           </button>
         </Link>
 
-        {/* <UpdateStudent /> */}
       </div>
     );
   }

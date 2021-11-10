@@ -15,11 +15,9 @@ export class AllStudents extends React.Component {
     this.props.deleteStudent();
   }
   render() {
-    console.log("1this.props:", this.props);
+    // console.log("1this.props:", this.props);
     const students = this.props.students;
-    console.log("students:", students);
-    //  const studentArr = Object.keys(students);
-    //  console.log('studentArr', studentArr)
+    // console.log("students:", students);
 
     //after clicking go to AllStudents i'm getting an Object,but before an array
     return (
@@ -27,36 +25,39 @@ export class AllStudents extends React.Component {
         <main>
           <h1>Welcome to view all Students:</h1>
         </main>
-        <div className="mainCard">
-
-          {Array.isArray(students)
-            ? students.map((student) => (
-                <div className="st" key={student.id}>
-                  <Link to={`/students/${student.id}`} key={student.id}>
-                    <div className="card">
-                      <img src={student.imageUrl} />
-                      <p>
-                        {student.firstName} {student.lastName}
-                      </p>
-                      <p>{student.email}</p>
-                    </div>
-                  </Link>
-                  <button
-                    type="button"
-                    className="button"
-                    onClick={() => this.props.deleteStudent(student.id)}
-                  >
-                    DELETE
-                  </button>
-                </div>
-              ))
-            : null}
-        </div>
-
         <AddStudent
           students={students}
           createNewStudent={this.props.createNewStudent}
         />
+        <div className="container">
+
+
+          <div className="row my-custom-row justify-content-center align-items-center">
+            {Array.isArray(students)
+              ? students.map((student) => (
+                <div className="col-sm-4" key={student.id}>
+                  <div className="p-3 border bg-light">
+
+                    <Link to={`/students/${student.id}`} key={student.id}>
+                      <img src={student.imageUrl} />
+                      <p>{student.firstName} {student.lastName}</p>
+                      <p>{student.email}</p>
+                    </Link>
+                    <button
+                      type="button"
+                      className="button btn btn-danger"
+                      onClick={() => this.props.deleteStudent(student.id)}
+                    >
+                      DELETE
+                    </button>
+                  </div>
+                </div>
+              ))
+              : null}
+          </div>
+        </div>
+
+
       </div>
     );
   }

@@ -1,6 +1,9 @@
 import React from "react";
+import { connect } from "react-redux";
+import { addCampusThunk } from "../redux/campuses";
 
 export class AddCampus extends React.Component {
+
   constructor(props) {
     super(props);
     this.state = {
@@ -9,6 +12,8 @@ export class AddCampus extends React.Component {
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    console.log("this.props from ADDCAMPUS:", this.props);
+
   }
   handleSubmit(event) {
     event.preventDefault();
@@ -25,10 +30,10 @@ export class AddCampus extends React.Component {
     });
   }
   render() {
-    console.log("this.props from ADDCAMPUS:", this.props);
+    // console.log("this.props from ADDCAMPUS:", this.props);
     return (
       <div id="container">
-        <div id="navbar">Add new Campus:</div>
+        <div id="navbar">Create new Campus:</div>
         <form onSubmit={this.handleSubmit}>
           <label htmlFor="name">Name:</label>
           <input
@@ -46,9 +51,22 @@ export class AddCampus extends React.Component {
             onChange={this.handleChange}
           />
 
-          <button type="submit">Submit</button>
+          <button type="submit">Create</button>
         </form>
       </div>
     );
   }
 }
+
+const mapState = (state) => {
+  return {
+    campuses: state.campuses,
+  };
+};
+
+const mapDispatch = (dispatch) => {
+  return {
+    addNewCampus: (campus) => dispatch(addCampusThunk(campus)),
+  };
+};
+export default connect(mapState,mapDispatch)(AddCampus)
